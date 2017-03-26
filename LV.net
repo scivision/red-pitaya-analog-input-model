@@ -1,0 +1,39 @@
+* Red Pitaya Analog Input
+* https://wiki.redpitaya.com/tmp/Fast_analog_inputs_sch.png
+* https://forum.redpitaya.com/viewtopic.php?f=9&t=468
+
+C200 Vin  Vout 6.8p
+C3   Vin  Vout 10p
+R3   Vin  Vout 499k
+R5   Vin  0    499k
+C206 Vout 0    10p
+
+RL Vout 0 500K
+
+*------- test source ------------
+* source resistance
+Rs Vs Vin 50
+
+* transient
+* V_V1 Vs 0 sin(0.0 1 50MEG 0 0) 
+
+* AC freq sweep
+V_V1 Vs 0 dc 0. ac 1. sin(0. 1. 100MEG 0 0) 
+
+
+*V_V1 Vin 0 pulse(-0.5 0.5 0 0.1u 0.1u 4.8u 10u)
+
+*--------- freq sweep -------------------------------------
+.print ac v(Vin) v(Vout)
+.AC DEC 200 100 50MEG  > LV.out 
+
+*--------- transient ----------------
+* .print selects quantities to output
+.print tran v(Vin) v(Vout)
+*gnucap
+*.tran 0.1u 10u 0 trace all > LV.out 
+
+*ngspice
+*.tran 1u 100u 0 
+
+.END
