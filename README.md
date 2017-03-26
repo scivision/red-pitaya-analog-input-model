@@ -10,7 +10,7 @@ Here is a model for the analog input filtering of the Red Pitaya for LV and HV p
 ![Red Pitaya Analog Input transfer function](https://cdn.rawgit.com/scivision/red-pitaya-analog-input-model/master/transfer_fcn.svg)
 *Red Pitaya Analog Input transfer function*
 
-Of course, the best way to use Red Pitaya for a 50 ohm RF system is to replace the existing circuit with one appropriate for 50 ohms, as the [Red Pitaya HamLab](https://wiki.redpitaya.com/index.php?title=HAMLAB) has done or as others have previously done.
+Of course, the best way to use Red Pitaya for a 50 ohm RF system is to replace the existing circuit with one appropriate for 50 ohms, as the [Red Pitaya HamLab](https://wiki.redpitaya.com/index.php?title=HAMLAB) has done or [as others have previously done](https://github.com/scivision/piradar/wiki/block-diagram#red-pitaya-modifications).
 
 ## Run Simulation
 
