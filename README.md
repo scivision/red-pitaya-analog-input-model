@@ -7,7 +7,7 @@ Here is a model for the analog input filtering of the Red Pitaya for LV and HV p
 * f > 100 kHz, HV has 26 dB less gain than LV.
 * f < 1 kHz, HF has 15 dB less gain than LV.
 
-![Red Pitaya Analog Input transfer function](transfer_fcn.svg)
+![Red Pitaya Analog Input transfer function](https://cdn.rawgit.com/scivision/red-pitaya-analog-input-model/blob/master/transfer_fcn.svg)
 *Red Pitaya Analog Input transfer function*
 
 ## Run Simulation
