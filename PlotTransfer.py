@@ -5,17 +5,27 @@ from matplotlib.pyplot import figure,show
 import seaborn
 seaborn.set_style('whitegrid')
 
-fn = Path('LV.out')
+lfn = Path('LV.out')
+hfn = Path('HV.out')
 
-
-dat = loadtxt(fn)
-
-T = dat[:,2]/dat[:,1]
+ldat = loadtxt(lfn)
+hdat = loadtxt(hfn)
+   
+f = ldat[:,0]
 #%%
 ax = figure().gca()
-ax.plot(dat[:,0], 20*log10(T))
+
+ax.plot(f, 20*log10(ldat[:,2]/ldat[:,1]),label='LV')
+ax.plot(f, 20*log10(hdat[:,2]/hdat[:,1]),label='HV')
+ax.plot(f, 20*log10(hdat[:,2]/ldat[:,2]),label='HV/LV')
+
+
 ax.set_xlabel('frequency [Hz]')
 ax.set_ylabel('gain [dB]')
-ax.set_title(f'{fn.stem} Transfer Function $H(f)$')
+ax.set_title('Transfer Function $H(f)$')
 ax.autoscale(True,axis='x',tight=True)
 ax.set_xscale('log')
+
+ax.legend()
+
+show()
