@@ -3,17 +3,19 @@
 * https://wiki.redpitaya.com/tmp/Fast_analog_inputs_sch.png
 * https://forum.redpitaya.com/viewtopic.php?f=9&t=468
 
-C200 Vin  Vout 6.8p
-C3   Vin  Vout 10p
-R3   Vin  Vout 499k
-R5   Vin  0    499k
+Cb   Vin 1  10p
+
+C200 1  Vout 6.8p
+C3   1  Vout 10p
+R3   1  Vout 499k
+R5   1  0    499k
 C206 Vout 0    10p
 
 RL Vout 0 500K
 
 *------- test source ------------
 * source resistance
-Rs Vs Vin 50
+Rs Vs Vin 150
 
 * transient
 * V_V1 Vs 0 sin(0.0 1 50MEG 0 0) 
@@ -26,7 +28,7 @@ V_V1 Vs 0 dc 0. ac 1. sin(0. 1. 100MEG 0 0)
 
 *--------- freq sweep -------------------------------------
 .print ac v(Vin) v(Vout)
-.AC DEC 200 100 50MEG  > LV.out 
+.AC DEC 200 50 50MEG  > LV.out 
 
 *--------- transient ----------------
 * .print selects quantities to output
